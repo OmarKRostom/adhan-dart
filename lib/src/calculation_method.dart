@@ -1,3 +1,5 @@
+import 'package:adhan/src/madhab.dart';
+
 import 'calculation_parameters.dart';
 import 'prayer_adjustments.dart';
 
@@ -51,6 +53,23 @@ enum CalculationMethod {
   /// Institute of Geophysics, University of Tehran. Early Isha time with an angle of 14°. Slightly later Fajr time with an angle of 17.7°.
   /// Calculates Maghrib based on the sun reaching an angle of 4.5° below the horizon.
   tehran,
+
+  /// Russia
+  russia,
+
+  /// UK
+  uk,
+
+  /// France
+  france_12,
+  france_15,
+  france_18,
+
+  /// Malaysia
+  jakim,
+
+  /// Jafari
+  jafari,
 
   /// The default value for [CalculationParameters.method] when initializing a
   /// [CalculationParameters] object. Sets a Fajr angle of 0 and an Isha angle of 0.
@@ -140,6 +159,67 @@ extension CalculationMethodExtensions on CalculationMethod {
             ishaAngle: 14,
             maghribAngle: 4.5,
             method: this,
+          );
+        }
+      case CalculationMethod.russia:
+        {
+          return CalculationParameters(
+            fajrAngle: 16,
+            ishaAngle: 15,
+            method: this,
+            madhab: Madhab.shafi
+          );
+        }
+      case CalculationMethod.uk:
+        {
+          return CalculationParameters(
+            fajrAngle: 15,
+            ishaAngle: 15,
+            method: this,
+            madhab: Madhab.hanafi
+          );
+        }
+      case CalculationMethod.jafari:
+        {
+          return CalculationParameters(
+            fajrAngle: 16,
+            ishaAngle: 14,
+            maghribAngle: 4,
+            method: this
+          );
+        }
+      case CalculationMethod.jakim:
+        {
+          return CalculationParameters(
+              fajrAngle: 20.0, ishaAngle: 18.0, method: this)
+              .withMethodAdjustments(PrayerAdjustments(
+              fajr: 0, sunrise: 0, dhuhr: 1, asr: 0, maghrib: 0, isha: 0));
+        }
+      case CalculationMethod.france_12:
+        {
+          return CalculationParameters(
+              fajrAngle: 12.0,
+              ishaAngle: 12.0,
+              method: this,
+              madhab: Madhab.shafi
+          );
+        }
+      case CalculationMethod.france_15:
+        {
+          return CalculationParameters(
+              fajrAngle: 15.0,
+              ishaAngle: 15.0,
+              method: this,
+              madhab: Madhab.shafi
+          );
+        }
+      case CalculationMethod.france_18:
+        {
+          return CalculationParameters(
+              fajrAngle: 18.0,
+              ishaAngle: 18.0,
+              method: this,
+              madhab: Madhab.shafi
           );
         }
       case CalculationMethod.other:
