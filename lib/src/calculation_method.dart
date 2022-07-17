@@ -165,8 +165,8 @@ extension CalculationMethodExtensions on CalculationMethod {
       case CalculationMethod.russia:
         {
           return CalculationParameters(
-                  fajrAngle: 18,
-                  ishaAngle: 17,
+                  fajrAngle: 18.0,
+                  ishaAngle: 17.0,
                   method: this,
                   madhab: Madhab.shafi,
                   highLatitudeRule: HighLatitudeRule.twilight_angle)
