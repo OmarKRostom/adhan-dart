@@ -175,10 +175,11 @@ extension CalculationMethodExtensions on CalculationMethod {
       case CalculationMethod.uk:
         {
           return CalculationParameters(
-              fajrAngle: 15,
-              ishaAngle: 15,
-              method: this,
-              madhab: Madhab.hanafi);
+              fajrAngle: 14.25,
+              ishaAngle: 9.0,
+              madhab: Madhab.shafi,
+              highLatitudeRule: HighLatitudeRule.twilight_angle
+          );
         }
       case CalculationMethod.jafari:
         {
