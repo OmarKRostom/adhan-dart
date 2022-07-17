@@ -170,7 +170,7 @@ extension CalculationMethodExtensions on CalculationMethod {
                   method: this,
                   madhab: Madhab.shafi)
               .withMethodAdjustments(PrayerAdjustments(
-                  fajr: 0, sunrise: 0, dhuhr: 1, asr: 0, maghrib: 0, isha: 0));
+                  fajr: 60, sunrise: 60, dhuhr: 60, asr: 60, maghrib: 60, isha: 60));
         }
       case CalculationMethod.uk:
         {
