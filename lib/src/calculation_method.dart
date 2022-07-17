@@ -1,3 +1,4 @@
+import 'package:adhan/src/high_latitude_rule.dart';
 import 'package:adhan/src/madhab.dart';
 
 import 'calculation_parameters.dart';
@@ -167,7 +168,8 @@ extension CalculationMethodExtensions on CalculationMethod {
             fajrAngle: 16,
             ishaAngle: 15,
             method: this,
-            madhab: Madhab.shafi
+            madhab: Madhab.shafi,
+            highLatitudeRule: HighLatitudeRule.seventh_of_the_night
           );
         }
       case CalculationMethod.uk:
