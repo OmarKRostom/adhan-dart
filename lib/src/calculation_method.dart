@@ -165,37 +165,33 @@ extension CalculationMethodExtensions on CalculationMethod {
       case CalculationMethod.russia:
         {
           return CalculationParameters(
-            fajrAngle: 18,
-            ishaAngle: 17,
-            method: this,
-            madhab: Madhab.shafi,
-            highLatitudeRule: HighLatitudeRule.twilight_angle
-          );
+                  fajrAngle: 18,
+                  ishaAngle: 17,
+                  method: this,
+                  madhab: Madhab.shafi,
+                  highLatitudeRule: HighLatitudeRule.twilight_angle)
+              .withMethodAdjustments(PrayerAdjustments(
+                  fajr: 0, sunrise: 0, dhuhr: 1, asr: 0, maghrib: 0, isha: 0));
         }
       case CalculationMethod.uk:
         {
           return CalculationParameters(
-            fajrAngle: 15,
-            ishaAngle: 15,
-            method: this,
-            madhab: Madhab.hanafi
-          );
+              fajrAngle: 15,
+              ishaAngle: 15,
+              method: this,
+              madhab: Madhab.hanafi);
         }
       case CalculationMethod.jafari:
         {
           return CalculationParameters(
-            fajrAngle: 16,
-            ishaAngle: 14,
-            maghribAngle: 4,
-            method: this
-          );
+              fajrAngle: 16, ishaAngle: 14, maghribAngle: 4, method: this);
         }
       case CalculationMethod.jakim:
         {
           return CalculationParameters(
-              fajrAngle: 20.0, ishaAngle: 18.0, method: this)
+                  fajrAngle: 20.0, ishaAngle: 18.0, method: this)
               .withMethodAdjustments(PrayerAdjustments(
-              fajr: 0, sunrise: 0, dhuhr: 1, asr: 0, maghrib: 0, isha: 0));
+                  fajr: 0, sunrise: 0, dhuhr: 1, asr: 0, maghrib: 0, isha: 0));
         }
       case CalculationMethod.france_12:
         {
@@ -203,8 +199,7 @@ extension CalculationMethodExtensions on CalculationMethod {
               fajrAngle: 12.0,
               ishaAngle: 12.0,
               method: this,
-              madhab: Madhab.shafi
-          );
+              madhab: Madhab.shafi);
         }
       case CalculationMethod.france_15:
         {
@@ -212,8 +207,7 @@ extension CalculationMethodExtensions on CalculationMethod {
               fajrAngle: 15.0,
               ishaAngle: 15.0,
               method: this,
-              madhab: Madhab.shafi
-          );
+              madhab: Madhab.shafi);
         }
       case CalculationMethod.france_18:
         {
@@ -221,8 +215,7 @@ extension CalculationMethodExtensions on CalculationMethod {
               fajrAngle: 18.0,
               ishaAngle: 18.0,
               method: this,
-              madhab: Madhab.shafi
-          );
+              madhab: Madhab.shafi);
         }
       case CalculationMethod.other:
         {
