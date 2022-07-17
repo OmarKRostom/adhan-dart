@@ -168,8 +168,7 @@ extension CalculationMethodExtensions on CalculationMethod {
                   fajrAngle: 18.0,
                   ishaAngle: 17.0,
                   method: this,
-                  madhab: Madhab.shafi,
-                  highLatitudeRule: HighLatitudeRule.twilight_angle)
+                  madhab: Madhab.shafi)
               .withMethodAdjustments(PrayerAdjustments(
                   fajr: 0, sunrise: 0, dhuhr: 1, asr: 0, maghrib: 0, isha: 0));
         }
