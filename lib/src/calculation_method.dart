@@ -169,7 +169,7 @@ extension CalculationMethodExtensions on CalculationMethod {
             ishaAngle: 15,
             method: this,
             madhab: Madhab.shafi,
-            highLatitudeRule: HighLatitudeRule.seventh_of_the_night
+            highLatitudeRule: HighLatitudeRule.twilight_angle
           );
         }
       case CalculationMethod.uk:
